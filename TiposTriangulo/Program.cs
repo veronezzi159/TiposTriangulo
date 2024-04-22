@@ -1,5 +1,5 @@
 ﻿decimal lado1, lado2, lado3;
-int r;
+int r = 0;
 bool ok;
 do {
     do
