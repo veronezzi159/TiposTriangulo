@@ -1,6 +1,6 @@
 ﻿decimal lado1, lado2, lado3;
 int r = 0;
-bool ok;
+bool ok = false;
 do {
     do
     {
@@ -65,5 +65,8 @@ do {
             Console.WriteLine("Deseja digitar outro triângulo? 1 - sim, 2 - não");
             r = int.Parse(Console.ReadLine());
         } while (r < 1 && r > 2);
+    } else
+    {
+        Console.WriteLine("Não é possivel formar um triângulo com esses valores");
     }
 } while (r == 1);
