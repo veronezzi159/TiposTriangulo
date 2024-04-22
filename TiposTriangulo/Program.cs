@@ -19,18 +19,18 @@ do {
 
     } while (lado1 < 0 || lado2 < 0 || lado3 < 0);
 
-    if((lado1 + lado2) >= lado3)
+    if((lado1 + lado2) > lado3)
     {
         ok = true;
     }
     else
     {
-        if ((lado2 + lado3) >= lado1)
+        if ((lado2 + lado3) > lado1)
         {
             ok = true;
         } else
         {
-            if (lado1 + lado3 >= lado2)
+            if (lado1 + lado3 > lado2)
             {
                 ok = true;
             }
