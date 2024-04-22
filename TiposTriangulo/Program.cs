@@ -1,5 +1,6 @@
 ﻿decimal lado1, lado2, lado3;
 int r;
+bool ok;
 do {
     do
     {
@@ -18,24 +19,51 @@ do {
 
     } while (lado1 < 0 || lado2 < 0 || lado3 < 0);
 
-    if (lado1 == lado2 && lado2 == lado3)
+    if((lado1 + lado2) >= lado3)
     {
-        Console.WriteLine("É um triângulo equilátero");
+        ok = true;
     }
     else
     {
-        if ((lado1 == lado2 && lado2 != lado3) || (lado2 == lado3 && lado3 != lado1) || (lado3 == lado1 && lado1 != lado2))
+        if ((lado2 + lado3) >= lado1)
         {
-            Console.WriteLine("É um triângulo Isósceles");
+            ok = true;
+        } else
+        {
+            if (lado1 + lado3 >= lado2)
+            {
+                ok = true;
+            }
+            else 
+            {
+                ok = false; 
+            }
+        }
+    }
+
+
+
+    if (ok == true)
+    {
+        if (lado1 == lado2 && lado2 == lado3)
+        {
+            Console.WriteLine("É um triângulo equilátero");
         }
         else
         {
-            Console.WriteLine("É um triângulo escaleno");
+            if ((lado1 == lado2 && lado2 != lado3) || (lado2 == lado3 && lado3 != lado1) || (lado3 == lado1 && lado1 != lado2))
+            {
+                Console.WriteLine("É um triângulo Isósceles");
+            }
+            else
+            {
+                Console.WriteLine("É um triângulo escaleno");
+            }
         }
+        do
+        {
+            Console.WriteLine("Deseja digitar outro triângulo? 1 - sim, 2 - não");
+            r = int.Parse(Console.ReadLine());
+        } while (r < 1 && r > 2);
     }
-    do
-    {
-        Console.WriteLine("Deseja digitar outro triângulo? 1 - sim, 2 - não");
-        r = int.Parse(Console.ReadLine());
-    } while (r < 1 && r > 2);
 } while (r == 1);
